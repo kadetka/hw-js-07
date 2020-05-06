@@ -9,50 +9,48 @@
 получить строку-перевертыш
 */
 
-const moduleString = function () {
-    let str;
+const moduleString = (function () {
+  let str;
 
-    function setString (string) {
-        if(string === undefined){
-            str = '';
-        }else if(typeof string === 'number'){
-            str = toString(string);
-        }else{
-            str = string
-        }
+  function setString(string) {
+    if (string === undefined) {
+      str = "";
+    } else if (typeof string === "number") {
+      str = toString(string);
+    } else {
+      str = string;
+    }
 
-        return str;
-    };
+    return str;
+  }
 
-    function getString () {
-        
-        return str;
-    };
+  function getString() {
+    return str;
+  }
 
-    function getStringLength () {
-        
-        return str.length;
-    };
+  function getStringLength() {
+    return str.length;
+  }
 
-    function getFlipString () {
-        let flipString = '';
+  function getFlipString() {
+    let flipString = "";
 
-        for(let i = str.length - 1; i >= 0; i--){
-            flipString += str[i];
-        };
+    for (let i = str.length - 1; i >= 0; i--) {
+      flipString += str[i];
+    }
 
-        return flipString;
-    };
+    return flipString;
+  }
 
-    return {
-        setString,
-        getString,
-        getStringLength,
-        getFlipString
-    };
-}();
+  return {
+    setString,
+    getString,
+    getStringLength,
+    getFlipString,
+  };
+})();
 
-console.log(moduleString.setString('abcd'));
+console.log(moduleString.setString("abcd"));
 console.log(moduleString.getString());
 console.log(moduleString.getStringLength());
 console.log(moduleString.getFlipString());
